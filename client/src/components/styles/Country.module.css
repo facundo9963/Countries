@@ -1,0 +1,14 @@
+.Country {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    padding: 2px;
+
+    display:inline-block;
+    justify-content: center;
+
+    
+
+    
+
+}
