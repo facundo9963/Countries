@@ -5,6 +5,7 @@ function Nav() {
     <div>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/countries'>All Character</NavLink>
+
     </div>
   )
 }

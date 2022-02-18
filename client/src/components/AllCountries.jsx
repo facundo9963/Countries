@@ -19,8 +19,10 @@ function AllCountries() {
 
                 <Country
                 key={country.ID}
+                ID={country.ID}
                 name={country.name}
                 image={country.image}
+                //capital={country.capital}
                 continent={country.continent}
                 subregion={country.subregion}
                 area={country.area}
@@ -31,4 +33,4 @@ function AllCountries() {
   )
 }
 
-export default AllCountries
+export default AllCountries;

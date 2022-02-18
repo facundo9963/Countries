@@ -1,8 +1,9 @@
-import { GET_ALL_COUNTRIES} from "../actions";
+import { GET_ALL_COUNTRIES, GET_ONE_COUNTRY} from "../actions";
 
 
 const initialState = {
     countries: [],
+    countryID:[],
 };
 
 const rootReducer = (state = initialState, {type, payload}) => {
@@ -10,6 +11,8 @@ const rootReducer = (state = initialState, {type, payload}) => {
         // Acá va tu código:
         case GET_ALL_COUNTRIES:
             return{ ...state, countries: [...state.countries, ...payload]}
+        case GET_ONE_COUNTRY:
+            return {...state,countryID: payload}
         // case GET_HOUSE:
         //     return{...state,house:payload}
         //  case CREATE_CHARACTER:

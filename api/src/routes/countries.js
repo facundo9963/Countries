@@ -33,7 +33,7 @@ router.get("/", async function (req, res, next) {
         name: country.name.common,
         image: country.flags[0],
         continent: country.continents[0],
-        //   capital: country.capital[0],
+        //capital: country.capital[0],
         subregion: country.subregion,
         area: country.area,
         population: country.population,
