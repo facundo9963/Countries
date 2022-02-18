@@ -17,10 +17,10 @@ function Country(props) {
 
   return (
     <div className={styles.Country}>
-        <h1>{props.name}</h1>
-        <img src={props.image} alt="imagen no encontrada" width ="300px" height="200px" />
-        <span>{props.continent} </span>
-        <button onClick={handleClick}>Detail</button>
+        <h1 className={styles.item1}>{props.name}</h1>
+        <img className={styles.item2} src={props.image} alt="imagen no encontrada" width ="300px" height="200px" />
+        <span className={styles.item3}>{props.continent} </span>
+        <button className={styles.item4} onClick={handleClick}>Detail</button>
     </div>
   )
 }
