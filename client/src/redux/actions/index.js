@@ -2,8 +2,9 @@ import axios from 'axios'
 
 export const GET_ALL_COUNTRIES = 'GET_ALL_COUNTRIES';
 export const GET_ONE_COUNTRY="GET_ONE_COUNTRY";
-export const GET_HOUSE = 'GET_HOUSE';
-export const DELETE_HOUSE = 'DELETE_HOUSE';
+export const CREATE_TOURIST_ACTIVITY = 'CREATE_TOURIST_ACTIVITY';
+export const FILTER_BY_CONTINENT = 'FILTER_BY_CONTINENT';
+export const FILTER_BY_TOURIST_ACTIVITY = 'FILTER_BY_TOURIS_ACTIVITY';
 
 export function getAllCountries(){
     return async function(dispatch){
@@ -22,9 +23,26 @@ export function getOneCountry(ID){
     }
 };
 
-// export const createCharacter = (character) => dispatch => {
-//     return axios.post("http://localhost:3004/character/create", character)
-//         .then((data)=>{
-//             dispatch({type:CREATE_CHARACTER, payload: data})
-//         })
-// };
+export function createTouristActivity(data) {
+    return async function(dispatch){
+        let response= await axios.post("http://localhost:3001/activity", data)
+        return dispatch({type:CREATE_TOURIST_ACTIVITY, payload: response.data})
+    }
+}
+export function filterByContinent(payload){
+    return {
+        type: "FILTER_BY_CONTINENT",
+        payload
+    }
+}
+export function filterByTouristActivity(data){
+    return async function(dispatch){
+        let response= await axios.get(`http://localhost:3001/activity/${data}`)
+    
+    return dispatch({
+        type: "FILTER_BY_TOURIST_ACTIVITY",
+        payload:{data,response}
+    })
+}
+}
+

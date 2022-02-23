@@ -1,0 +1,13 @@
+.btn{
+    border-style: solid;
+    border-radius: 1rem;
+    border-width: 0.2rem;
+
+
+}
+.btn:hover{
+    transition: 0.3s ease all;
+        box-shadow: 1px 1px 2px #020202;
+        background-color: #797979;
+        width: 100%;
+}

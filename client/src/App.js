@@ -1,23 +1,26 @@
 import styles from "./App.module.css";
 import {  Route } from "react-router-dom";
 import Nav from "./components/Nav";
-import React, { useEffect } from "react";
-import AllCountries from "./components/AllCountries";
+import React from "react";
+
 import CountryDetail from "./components/CountryDetail";
-import { getAllCountries } from "./redux/actions";
-import { useDispatch } from "react-redux";
+import AddTouristActivity from "./components/AddTouristActivity";
+
+import Home from "./components/Home";
+import MainPage from "./components/MainPage";
+
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllCountries())
-  }, [dispatch])
+
 
   return (
     <div className={styles.App}>
       <Route path="/" component={Nav} />
-      <Route exact path="/countries" component={AllCountries} />
-      <Route exact path="/countries/detail/:ID" component={CountryDetail} />
+      <Route exact path="/" component={MainPage} />
+      
+      <Route exact path="/countries" component={Home} />
+      <Route exact path="/countries/:ID" component={CountryDetail} />
+      <Route exact path="/activity" component={AddTouristActivity} />
     </div>
   );
 }

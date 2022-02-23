@@ -1,0 +1,46 @@
+.container{
+	max-width: 250px;
+	position: fixed;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+
+
+
+.container select {
+
+	appearance: none;
+
+
+	cursor: pointer;
+  	padding: 7px 15px;
+  	height: 42px;
+	border-radius: 0;
+    background-color: black;
+	font-size: 1em;
+	color: white;
+	font-family: monospace;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: all 0.25s ease;
+
+}
+
+.container select::-ms-expand {
+    display: none;
+}
+
+.container select:hover{
+    cursor: pointer;
+    background-color: white;
+    border-color:black;
+    color:black;
+
+}
+
+

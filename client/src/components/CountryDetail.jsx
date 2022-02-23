@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getOneCountry } from '../redux/actions';
 import { useDispatch } from 'react-redux';
 
+
 // CUIDADOOOO. SI O SI FUNCTIONAL COMPONENT! SE ROMPEN LOS TEST EN CASO CONTRARIO!!
 // TAMBIEN VAS A TENER QUE USAR HOOKS!
 const CountryDetail = () => {
