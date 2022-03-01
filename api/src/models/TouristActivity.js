@@ -12,8 +12,12 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
       allowNull:false,
       validate:{
-        [Op.between]: [1,5]
+        isEven(value) {
+          if (!((value) > 0 && (value)<6)) {
+            throw new Error('Only even values are allowed!');
+          }
       }
+    }
     },
     duration:{
         type: DataTypes.INTEGER,

@@ -1,4 +1,5 @@
 const { DataTypes, Op } = require("sequelize");
+var validator = require('validator');
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
@@ -8,13 +9,14 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull:false,
       primaryKey: true,
-      validate:{
-        [Op.regexp]: '\b[A-Z]{3}\b'
-      }
+
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate:{
+        notEmpty: true,
+      }
     },
     image: {
       type: DataTypes.STRING,
@@ -24,10 +26,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // capital: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-   // },
+    capital: {
+      type: DataTypes.STRING,
+
+   },
     subregion: {
       type: DataTypes.STRING,
     },

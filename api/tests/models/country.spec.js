@@ -1,5 +1,8 @@
 const { Country, conn } = require('../../src/db.js');
+const chai = require('chai');
 const { expect } = require('chai');
+const should=chai.should()
+
 
 describe('Country model', () => {
   before(() => conn.authenticate()
@@ -14,8 +17,22 @@ describe('Country model', () => {
           .then(() => done(new Error('It requires a valid name')))
           .catch(() => done());
       });
-      it('should work when its a valid name', () => {
-        Country.create({ name: 'Argentina' });
+      it('should work when its a valid name', async() => {
+        try{
+
+          const newCountry =  await Country.create({
+            ID:1000,
+            name:"",   //si el nombre está vacío tira error
+            image:"imagenVacía",
+            continent:"Europa"
+          })
+        }catch(e){
+           should.exist(e)
+        }
+        
+        
+
+
       });
     });
   });

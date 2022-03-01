@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    margin-top: 9rem;
+    width: 80%;
+    justify-content: center;
+    
+}
+.btn{
+    padding: 2px 2px ;
+    text-align: center;
+    justify-content: center;
+    width: 2rem;
+    color:white;
+    background-color: black;
+    border-color: white;
+    border-radius: 1rem;
+    border-width: 2px;
+
+}
+.btn:hover{
+    background-color: rgb(49, 49, 49);
+}

@@ -1,30 +1,37 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import {  useSelector } from 'react-redux';
 import Country from './Country';
+import Paginate from './Paginate';
 import Search from './Search';
 import styles from "./styles/Home.module.css"
-import { getAllCountries } from "../redux/actions";
-import { useDispatch } from "react-redux";
-import{ useEffect } from "react";
+
 
 function Home() {
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllCountries())
-  }, [dispatch])
 
-    const countries = useSelector(state => state.allFiltered)
-    
+  
+  const countries = useSelector(state => state.allFiltered)
+  const[currentPage, setCurrentPage]=useState(1);
+  const[CountriesPerPage]=useState(10);
+  const lastIndex= currentPage* CountriesPerPage;
+  const firstIndex= lastIndex- CountriesPerPage;
+  const currentCountries=countries.slice(firstIndex,lastIndex)
+
+  const paginate=(pageNumber)=>{
+    setCurrentPage(pageNumber)
+  }
 
 
   return (
     <>
     <Search/>
+    <Paginate countriesPerPage={CountriesPerPage}
+    countries={countries.length}
+    paginate={paginate}/>
 
 
-    <div className={styles.Countries}> Hola
-        {      countries && countries.map(country =>{
+    <div className={styles.Countries}> 
+        {      currentCountries && currentCountries.map(country =>{
           return (
             
             <Country

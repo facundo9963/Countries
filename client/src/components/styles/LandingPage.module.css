@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgba(8, 17, 70, 0.7);
+    align-items: center;
+    justify-content: center;
+    margin-top: 8rem;
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+
+}
+.container h1 {
+    font-family: monospace;
+    font-weight: 800;
+    font-size:xx-large;
+    color: white;
+
+}
+.container span {
+    font-family: monospace;
+    color: white;
+}
+.btn{
+    display: block;
+    width: 40%;
+    align-items: center;
+    margin: 1rem;
+    background-color: black;
+    color: white;
+    border-style: solid;
+    border-radius: 1rem;
+
+
+}
+.btn:hover{
+    background-color: white;
+    border-color: black;
+    color: black;
+
+}

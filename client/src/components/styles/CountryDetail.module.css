@@ -1,13 +1,41 @@
-.btn{
-    border-style: solid;
+.container{
+
+
+    width:300px;
+    margin-top: 6rem;
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+
+    padding-left:  2rem;
+    padding-right: 2rem;
+    background-color: rgb(238, 227, 227, 0.25);
     border-radius: 1rem;
-    border-width: 0.2rem;
-
-
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
 }
-.btn:hover{
-    transition: 0.3s ease all;
-        box-shadow: 1px 1px 2px #020202;
-        background-color: #797979;
-        width: 100%;
+.img{
+
+ width: 100%;
+    
+}
+.caracteristicas{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: center;
+    font-weight: 700;
+    transition:1s;
+
+    
+}
+.caracteristicas:hover{
+    background-color: rgb(238, 227, 227, 0.5);
+    border-radius: 1rem;
+    border-color: rgba(14, 13, 49, 0.966);
+    border-width: 2px;
 }

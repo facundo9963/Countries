@@ -15,19 +15,22 @@
 .Country:hover {
         transition: 0.3s ease all;
         box-shadow: 1px 1px 2px #020202;
-        background-color: #b1b6a6;
-        width: 100%;
+        background-color: #e6e6e6;
+        
     }
 
 
 .item1 {
     text-align: center;
+    font-family: monospace;
     width: 30%;
+    font-size: xx-large;
+    font-weight: bold;
 
 }
 .item2{
 
-    object-fit: cover;
+    object-fit:cover;
     width: 40%;
     border-color: #020202 ;
     border-style: solid;
@@ -37,6 +40,9 @@
 .item3{
     text-align: center;
     width: 15%;
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: 500;
 }
 .item4{
     width: 15%;

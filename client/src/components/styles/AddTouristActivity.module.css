@@ -1,0 +1,105 @@
+.container{
+    background-color: rgb(238, 227, 227, 0.7);
+    margin-top: 6rem;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2% 10%;
+    border-radius: 1rem;
+
+}
+.container select{
+
+    border-radius: 0.5rem;
+    border-color: black;
+    border-width: 2px;
+    padding: 0.3rem 0.3rem;
+    transition:1s;
+
+}
+.container select:hover{
+
+    background-color: rgb(196, 196, 196);
+}
+.container label{
+    display: block;
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+.container input{
+    border-radius: 1rem;
+    border-color: black;
+    border-width: 2px;
+    padding: 0.3rem 0.3rem;
+
+}
+.btn{
+    display: block;
+    width: 20%;
+    padding: 0.3rem 0.3rem;
+    align-items: center;
+    margin-left: 40%;
+    font-family: monospace;
+    font-size: 2vw;
+    font-weight: 600;
+
+    
+    background-color: black;
+    color: white;
+    border-style: solid;
+    border-radius: 1rem;
+
+
+}
+.btn:hover{
+    background-color: white;
+    border-color: black;
+    color: black;
+
+}
+.cardContainer{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    margin-top: 0.7rem;
+    width: 20%;
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(30, 70, 182);
+    color: white;
+    padding: 1rem 1rem;
+    justify-content: center;
+}
+.card label{
+    font-family: monospace;
+    font-size: 2vw;
+    font-weight: 600;
+}
+.card button{
+    border-radius: 2rem;
+    border-style: solid;
+    border-width: 4px;
+    color: white;
+    border-color: white;
+    background-color: red;
+
+}
+.card button:hover{
+    color: red;
+    border-color: red;
+    background-color: white;
+}
+
+
+

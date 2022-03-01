@@ -1,17 +1,23 @@
 .container{
-	max-width: 250px;
+	width: 100%;
 	position: fixed;
     display: flex;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top: 6rem;
 }
-
+.searchBar{
+    margin-top: 4rem;
+    position: fixed;
+    justify-content: center;
+}
 
 
 
 .container select {
 
 	appearance: none;
+    width: 150px;
+    
 
 
 	cursor: pointer;

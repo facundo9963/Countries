@@ -6,7 +6,7 @@ function Nav() {
     <div className={styles.nav}>
         <NavLink className={styles.navLink} to='/countries'>Home</NavLink>
         <NavLink className={styles.navLink} to='/activity'>Add tourist activity</NavLink>
-        <NavLink className={styles.navLink} to='/'>Main Page</NavLink>
+        <NavLink className={styles.navLink} to='/'>Landing Page</NavLink>
     </div>
     
   )
