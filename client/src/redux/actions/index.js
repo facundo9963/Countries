@@ -7,6 +7,9 @@ export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT";
 export const FILTER_BY_TOURIST_ACTIVITY = "FILTER_BY_TOURIS_ACTIVITY";
 export const FILTER_BY_SEARCH = "FILTER_BY_SEARCH";
 export const GET_ALL_ACTIVITIES = "GET_ALL_ACTIVITIES";
+export const SORT_BY_NAME = "SORT_BY_NAME";
+export const SORT_BY_POPULATION = "SORT_BY_POPULATION";
+
 
 export function getAllCountries() {
   return async function (dispatch) {
@@ -45,6 +48,18 @@ export function createTouristActivity(data) {
 export function filterBySearch(payload) {
   return {
     type: FILTER_BY_SEARCH,
+    payload,
+  };
+}
+export function sortByName(payload) {
+  return {
+    type: SORT_BY_NAME,
+    payload,
+  };
+}
+export function sortByPopulation(payload) {
+  return {
+    type: SORT_BY_POPULATION,
     payload,
   };
 }

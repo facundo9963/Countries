@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import {  useSelector } from 'react-redux';
 import Country from './Country';
 import Paginate from './Paginate';
@@ -8,9 +8,13 @@ import styles from "./styles/Home.module.css"
 
 function Home() {
 
+  
+
+    const countries = useSelector(state => state.allFiltered)
+    
+ 
 
   
-  const countries = useSelector(state => state.allFiltered)
   const[currentPage, setCurrentPage]=useState(1);
   const[CountriesPerPage]=useState(10);
   const lastIndex= currentPage* CountriesPerPage;
@@ -24,7 +28,7 @@ function Home() {
 
   return (
     <>
-    <Search/>
+    <Search setCurrentPage={setCurrentPage}/>
     <Paginate countriesPerPage={CountriesPerPage}
     countries={countries.length}
     paginate={paginate}/>
@@ -39,7 +43,7 @@ function Home() {
             ID={country.ID}
             name={country.name}
             image={country.image}
-            //capital={country.capital}
+            capital={country.capital}
             continent={country.continent}
             subregion={country.subregion}
             area={country.area}
