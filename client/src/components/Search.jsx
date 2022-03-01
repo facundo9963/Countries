@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import { filterByContinent, filterByTouristActivity, getAllActivities, sortByName, sortByPopulation } from "../redux/actions";
 
 
-function Search({setCurrentPage}) {
+function Search({setCurrentPage, setOrder}) {
 
   let activities= useSelector(state => state.allActivities)
   let dispatch = useDispatch();
@@ -33,12 +33,14 @@ function Search({setCurrentPage}) {
   function handleSortByName(e,setCurrentPage){
   e.preventDefault()
   setCurrentPage(1)
+  setOrder(`Order By ${e.target.value}`)
   dispatch(sortByName(e.target.value))
   }
 
   function handleSortByPopulation(e,setCurrentPage){
   e.preventDefault()
   setCurrentPage(1)
+  setOrder(`Order By ${e.target.value}`)
   dispatch(sortByPopulation(e.target.value))
   }
   
@@ -77,6 +79,7 @@ function Search({setCurrentPage}) {
           <option value="Oceania">Oceania</option>
         </select>
         <select
+
           className={styles.select}
           onChange={(e) => handleFilterByTouristActivity(e,setCurrentPage)}
           >

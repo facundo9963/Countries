@@ -17,6 +17,7 @@ function Home() {
   
   const[currentPage, setCurrentPage]=useState(1);
   const[CountriesPerPage]=useState(10);
+  const[order,setOrder]=useState();
   const lastIndex= currentPage* CountriesPerPage;
   const firstIndex= lastIndex- CountriesPerPage;
   const currentCountries=countries.slice(firstIndex,lastIndex)
@@ -28,7 +29,7 @@ function Home() {
 
   return (
     <>
-    <Search setCurrentPage={setCurrentPage}/>
+    <Search setCurrentPage={setCurrentPage} setOrder={setOrder}/>
     <Paginate countriesPerPage={CountriesPerPage}
     countries={countries.length}
     paginate={paginate}/>

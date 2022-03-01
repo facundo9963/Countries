@@ -40,6 +40,7 @@ const AddTouristActivity = () => {
       season: "",
     });
     setAllSelected([])
+    
   };
   const handleDelete = (name,ID) => {
     setAllSelected(
