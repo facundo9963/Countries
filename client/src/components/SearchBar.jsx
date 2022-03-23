@@ -20,13 +20,12 @@ const handleChange = (e) => {
     e.preventDefault();
     dispatch(filterBySearch(search));
     setSearch("")
-
   }
 
   return (
     <form className={styles.searchBar} onSubmit={(e)=>handleSubmit(e)}>
         <input onChange={(e)=>handleChange(e)}  value={search} />
-        <input type="submit" value="Buscar"/>
+        <button type="submit">Search</button>
 
 
     </form>

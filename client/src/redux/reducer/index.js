@@ -8,6 +8,7 @@ import {
   GET_ALL_ACTIVITIES,
   SORT_BY_NAME,
   SORT_BY_POPULATION,
+
 } from "../actions";
 
 // function continentFilter(countries, payload) {

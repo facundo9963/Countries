@@ -6,8 +6,7 @@ import { useDispatch } from "react-redux";
 import TouristActivity from "./TouristActivity";
 import styles from "./styles/CountryDetail.module.css"
 
-// CUIDADOOOO. SI O SI FUNCTIONAL COMPONENT! SE ROMPEN LOS TEST EN CASO CONTRARIO!!
-// TAMBIEN VAS A TENER QUE USAR HOOKS!
+
 const CountryDetail = () => {
   const { ID } = useParams();
 
@@ -31,10 +30,10 @@ const CountryDetail = () => {
 
       <span>Continent: {Country.continent} </span>
       <span>Capital: {Country.capital? Country.capital : "Doesn`t have"} </span>
-      <span>ID: {Country.ID}</span>
-      <span>Subregion: {Country.subregion}</span>
-      <span>Area: {Country.area}</span>
-      <span>Population: {Country.population}</span>
+      <span>ID: {Country.ID? Country.ID: "Doesn`t have"}</span>
+      <span>Subregion: {Country.subregion? Country.subregion : "Doesn`t have"}</span>
+      <span>Area: {Country.area? Country.area+" km²":"Doesn`t have"}</span>
+      <span>Population: {Country.population ? Country.population:"Doesn`t have"}</span>
       </div>
       {console.log(Country.TouristActivities)}
       {Country.TouristActivities && Country.TouristActivities.map((activity) => {

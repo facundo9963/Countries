@@ -9,7 +9,7 @@ function TouristActivity(props) {
       <div className={styles.container}>
         <div>Activity: {props.name}</div>
         <div>Difficulty: {props.difficulty}</div>
-        <div>Duration: {props.duration}</div>
+        <div>Duration: {props.duration} min</div>
         <div>Season: {props.season}</div>
       </div>
     );

@@ -1,6 +1,8 @@
 import axios from "axios";
 
 export const GET_ALL_COUNTRIES = "GET_ALL_COUNTRIES";
+
+
 export const GET_ONE_COUNTRY = "GET_ONE_COUNTRY";
 export const CREATE_TOURIST_ACTIVITY = "CREATE_TOURIST_ACTIVITY";
 export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT";
@@ -11,15 +13,18 @@ export const SORT_BY_NAME = "SORT_BY_NAME";
 export const SORT_BY_POPULATION = "SORT_BY_POPULATION";
 
 
-export function getAllCountries() {
+export function getAllCountries(query) {
   return async function (dispatch) {
-    let response = await axios.get("http://localhost:3001/countries");
+    let queryConfirm
+    query? queryConfirm=query : queryConfirm=""
+    let response = await axios.get(`http://localhost:3001/countries${queryConfirm}`);
     return dispatch({
       type: GET_ALL_COUNTRIES,
       payload: response.data,
     });
   };
 }
+
 export function getAllActivities() {
   return async function (dispatch) {
     let response = await axios.get("http://localhost:3001/activity");

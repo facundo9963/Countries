@@ -1,5 +1,7 @@
-import React, {  useState } from 'react';
-import {  useSelector } from 'react-redux';
+import React, {  useEffect, useState } from 'react';
+import {  useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router';
+import { getAllCountries } from '../redux/actions';
 import Country from './Country';
 import Paginate from './Paginate';
 import Search from './Search';
@@ -7,10 +9,21 @@ import styles from "./styles/Home.module.css"
 
 
 function Home() {
+  const dispatch= useDispatch();
+  const location=useLocation();
+  const query= location.search
+  console.log(location)
 
+  useEffect(() => {
+    dispatch(getAllCountries(query))
+  }, [dispatch, query])
   
 
-    const countries = useSelector(state => state.allFiltered)
+    
+   
+  
+
+  const countries = useSelector(state => state.allFiltered)
     
  
 

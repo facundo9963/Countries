@@ -8,12 +8,13 @@ import styles from "./styles/AddTouristActivity.module.css";
 
 
 const AddTouristActivity = () => {
+
   const allCountries = useSelector((state) => state.countries);
   console.log("all countries", allCountries);
 
   const dispatch = useDispatch();
   const [allSelected, setAllSelected] = React.useState([]);
-
+  const [error, setError] = React.useState({})
   const [activity, setActivity] = React.useState({
     countryAct: "",
     countries: [],
@@ -22,9 +23,17 @@ const AddTouristActivity = () => {
     duration: "",
     season: "",
   });
+
+
   const handleChange = (e) => {
     e.preventDefault();
     setActivity({ ...activity, [e.target.name]: e.target.value });
+    setError(
+      validate({
+        ...activity,
+        [e.currentTarget.name]: e.target.value,
+      }),
+    )
   };
 
   const handleSubmit = (e) => {
@@ -37,7 +46,7 @@ const AddTouristActivity = () => {
       name: "",
       difficulty: "",
       duration: "",
-      season: "",
+      season:"",
     });
     setAllSelected([])
     
@@ -82,10 +91,33 @@ const AddTouristActivity = () => {
     }
   };
 
+  function validate(activity){
+    let error = {}
+
+    if (!activity.name) {
+      error.name = " A name is required"
+    }
+  
+    if (!activity.difficulty) {
+      error.difficulty = "A difficulty is required"
+    }
+    if (!activity.duration) {
+      error.duration = "A duration is required"
+    }
+    if (!activity.season) {
+      error.season = "A season is required"
+    }
+  
+    return error
+  }
 
   function handleValidate(e) {
     e.preventDefault();
     var name = document.getElementById('name').value;
+    if(activity.countries.length<1){
+      alert("Please choose one or more countries")
+      return;
+    }
     if(name.length === 0) {
       alert('Please, put the name of the activity');
       return;
@@ -100,6 +132,7 @@ const AddTouristActivity = () => {
       alert('choose a season');
       return;
     }
+    
     handleSubmit(e);
   }
 
@@ -144,24 +177,27 @@ const AddTouristActivity = () => {
           value={activity.name}
           required
         />
+        {error.name && <label className={styles.error}>{error.name}</label>}
         <label>Dificulty: </label>
         <input
           id="difficulty"
           onChange={(e) => handleChange(e)}
           name="difficulty"
-          placeholder="difficulty"
+          placeholder="difficulty (1 to 5)"
           value={activity.difficulty}
           required
         />
+        {error.difficulty && <label className={styles.error}>{error.difficulty}</label>}
         <label>Duration: </label>
         <input
           id="duration"
           onChange={(e) => handleChange(e)}
           name="duration"
-          placeholder="duration"
+          placeholder="duration (in minutes)"
           value={activity.duration}
           required
         />
+        {error.duration && <label className={styles.error}>{error.duration}</label>}
         <label>Season: </label>
         <select id="season" name="season" onChange={(e) => handleChange(e)}>
           <option value="">Chose One</option>
@@ -170,6 +206,7 @@ const AddTouristActivity = () => {
           <option value="spread">Spread</option>
           <option value="autumn">Autumn</option>
         </select>
+        {error.season && <label className={styles.error}>{error.season}</label>}
         <button className={styles.btn} type="submit">
           Create
         </button>
